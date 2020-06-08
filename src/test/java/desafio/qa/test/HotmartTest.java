@@ -6,8 +6,26 @@ import desafio.qa.page.HotmartPage;
 import desafio.qa.util.Property;
 import desafio.qa.util.Utils;
 
+/**
+ * <h1>Classe de teste contendo os casos de teste do cadastro no Hotmart.</h1>
+ * @author Thalya
+ */
 public class HotmartTest extends CoreBaseTest {
 	
+	/**
+	 * Caso de teste responsável por realizar a validação no campo senha com uma senha apenas numerica.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche campo Email 
+	 * 4  - Preenche campo Senha com dado de 7 caracteres numeros
+	 * 5  - Clica em Aceitar Termo de Uso
+	 * 6  - Clica no botão Continuar
+	 * 7  - Valida texto encontrado na tela com texto esperado
+	 * 8  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void validarSenhaInvalidaApenasNumeroTest() {
 		
@@ -24,6 +42,20 @@ public class HotmartTest extends CoreBaseTest {
 		Utils.takeScreenshot(driver, "CadastroInvalidoUsuario", "SenhaInvalidaApenasNumero");
 	}
 	
+	/**
+	 * Caso de teste responsável por realizar a validação no campo senha com uma senha apenas alfa.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche campo Email 
+	 * 4  - Preenche campo Senha com dado de 7 caracteres letras
+	 * 5  - Clica em Aceitar Termo de Uso
+	 * 6  - Clica no botão Continuar
+	 * 7  - Valida texto encontrado na tela com texto esperado
+	 * 8  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void validarSenhaInvalidaApenasLetrasTest() {
 		
@@ -40,6 +72,20 @@ public class HotmartTest extends CoreBaseTest {
 		Utils.takeScreenshot(driver, "CadastroInvalidoUsuario", "SenhaInvalidaApenasLetras");
 	}
 	
+	/**
+	 * Caso de teste responsável por realizar a validação no campo senha com uma senha menor que 7 caracteres.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche campo Email 
+	 * 4  - Preenche campo Senha com dados de 6 caracteres
+	 * 5  - Clica em Aceitar Termo de Uso
+	 * 6  - Clica no botão Continuar
+	 * 7  - Valida texto encontrado na tela com texto esperado
+	 * 8  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void validarSenhaInvalidaTest() {
 		
@@ -55,7 +101,20 @@ public class HotmartTest extends CoreBaseTest {
 		hotmartPage.validarMensagemSenhaInvalido("No mínimo 7 caracteres, com ao menos uma letra e um número.");
 		Utils.takeScreenshot(driver, "CadastroInvalidoUsuario", "SenhaInvalida");
 	}
-	
+	/**
+	 * Caso de teste responsável por realizar a validação no campo e-mail.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche o campo com um e-mail Incorreto
+	 * 4  - Preenche campo Senha
+	 * 5  - Clica em Aceitar Termo de Uso
+	 * 6  - Clica no botão Continuar
+	 * 7  - Valida texto encontrado na tela com texto esperado
+	 * 8  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void validarEmailInvalidoTest() {
 		
@@ -72,6 +131,16 @@ public class HotmartTest extends CoreBaseTest {
 		Utils.takeScreenshot(driver, "CadastroInvalidoUsuario", "cadastroComEmailInvalido");
 	}
 	
+	/**
+	 * Caso de teste responsável por realizar a validação dos campos obrigatorios.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Clica no botão Continuar
+	 * 3  - Valida os textos encontrado na tela com os textos esperado
+	 * 4  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void validarCamposObrigatorioTest() {
 		
@@ -88,6 +157,19 @@ public class HotmartTest extends CoreBaseTest {
 		Utils.takeScreenshot(driver, "CadastroUsuario", "validarCamposObrigatorios");
 	}
 	
+	/**
+	 * Caso de teste responsável por realizar cadastro de usuário.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche campo Email 
+	 * 4  - Preenche campo Senha
+	 * 5  - Clica em Aceitar Termo de Uso
+	 * 6  - Clica no botão Continuar
+	 * 7  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void cadastrarUsuarioTest() {
 		
@@ -103,6 +185,20 @@ public class HotmartTest extends CoreBaseTest {
 		Utils.takeScreenshot(driver, "CadastroUsuario", "cadastroComSucesso");
 	}
 	
+	/**
+	 * Caso de teste responsável por realizar validação de usuario já cadastrado no sistema.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche campo Email 
+	 * 4  - Preenche campo Senha
+	 * 5  - Clica em Aceitar Termo de Uso
+	 * 6  - Clica no botão Continuar
+	 * 7  - Valida a mensagem encontrado na tela com a mensagem esperada
+	 * 8  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void CadastrarUsuarioExistenteTest() {
 		
@@ -119,6 +215,19 @@ public class HotmartTest extends CoreBaseTest {
 		Utils.takeScreenshot(driver, "CadastroUsuario", "cadastroExistente");
 	}
 	
+	/**
+	 * Caso de teste responsável por realizar validação do campo Termo de Uso.
+	 * 
+	 * <pre>
+	 * 1  - Acessa a pagina de cadastro do Hotmart
+	 * 2  - Preenche campo Nome Completo
+	 * 3  - Preenche campo Email 
+	 * 4  - Preenche campo Senha
+	 * 5  - Clica no botão Continuar
+	 * 6  - Valida a mensagem encontrado na tela com a mensagem esperada
+	 * 7  - Coleta Evidencia
+	 * </pre>
+	 */
 	@Test
 	public void validarTermoUsoTest() {
 		
